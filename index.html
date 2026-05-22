@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Prédiction Web</title>
+  <title>Prediction Web</title>
 </head>
 <body>
-  <h1>Application de Prédiction</h1>
+  <h1>Application de Prediction</h1>
   <input id="inputX" type="number" placeholder="Entrez une valeur">
-  <button onclick="predict()">Prédire</button>
+  <button onclick="predict()">Predire</button>
   <p id="result"></p>
 
   <script>
@@ -16,9 +16,7 @@
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({x: Number(x)})
-  });
-
-
+      });
       const data = await response.json();
       document.getElementById("result").innerText = "Résultat : " + data.prediction;
     }
