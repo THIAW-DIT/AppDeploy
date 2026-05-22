@@ -4,6 +4,10 @@ import joblib
 app = Flask(__name__)
 model = joblib.load("modele.pkl")
 
+@app.route("/")
+def home():
+    return "Bienvenue sur mon API de prédiction !"
+
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.json
