@@ -12,11 +12,12 @@
   <script>
     async function predict() {
       const x = document.getElementById("inputX").value;
-      const response = await fetch("https://monappli.onrender.com/predict", {
+      const response = await fetch("https://appdeploy-awyw.onrender.com/predict", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({x: Number(x)})
-      });
+  });
+
 
       const data = await response.json();
       document.getElementById("result").innerText = "Résultat : " + data.prediction;
